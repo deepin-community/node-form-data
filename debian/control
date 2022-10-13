@@ -1,0 +1,35 @@
+Source: node-form-data
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jérémy Lal <kapouer@melix.org>
+Section: javascript
+Priority: optional
+Testsuite: autopkgtest-pkg-nodejs
+Build-Depends:
+ debhelper-compat (= 13)
+ , node-asynckit <!nocheck>
+ , node-combined-stream <!nocheck>
+ , node-formidable <!nocheck>
+ , node-mime-types <!nocheck>
+ , pkg-js-tools (>= 0.8.7)
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-form-data
+Vcs-Git: https://salsa.debian.org/js-team/node-form-data.git
+Homepage: https://github.com/felixge/node-form-data
+Rules-Requires-Root: no
+
+Package: node-form-data
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , nodejs
+ , node-asynckit
+ , node-combined-stream
+ , node-mime-types
+Description: Create multipart/form-data streams module for Node.js
+ node-form-data can be used to submit forms and file uploads to other
+ web applications.
+ .
+ The API of this module is inspired by the w3c XMLHttpRequest
+ specification.
+ .
+ Node.js is an event-based server-side javascript engine.
