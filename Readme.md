@@ -189,6 +189,7 @@ form.submit({
 - [_Void_ append( **String** _field_, **Mixed** _value_ [, **Mixed** _options_] )](https://github.com/form-data/form-data#void-append-string-field-mixed-value--mixed-options-).
 - [_Headers_ getHeaders( [**Headers** _userHeaders_] )](https://github.com/form-data/form-data#array-getheaders-array-userheaders-)
 - [_String_ getBoundary()](https://github.com/form-data/form-data#string-getboundary)
+- [_Void_ setBoundary()](https://github.com/form-data/form-data#void-setboundary)
 - [_Buffer_ getBuffer()](https://github.com/form-data/form-data#buffer-getbuffer)
 - [_Integer_ getLengthSync()](https://github.com/form-data/form-data#integer-getlengthsync)
 - [_Integer_ getLength( **function** _callback_ )](https://github.com/form-data/form-data#integer-getlength-function-callback-)
@@ -217,14 +218,18 @@ form.append( 'my_file', fs.createReadStream('/foo/bar.jpg'), {filename: 'bar.jpg
 ```
 
 #### _Headers_ getHeaders( [**Headers** _userHeaders_] )
-This method ads the correct `content-type` header to the provided array of `userHeaders`.  
+This method adds the correct `content-type` header to the provided array of `userHeaders`.
 
 #### _String_ getBoundary()
-Return the boundary of the formData. A boundary consists of 26 `-` followed by 24 numbers
+Return the boundary of the formData. By default, the boundary consists of 26 `-` followed by 24 numbers
 for example:
 ```javascript
 --------------------------515890814546601021194782
 ```
+
+#### _Void_ setBoundary(String _boundary_)
+Set the boundary string, overriding the default behavior described above.
+
 _Note: The boundary must be unique and may not appear in the data._
 
 #### _Buffer_ getBuffer()
@@ -343,6 +348,8 @@ axios.post('http://example.com', form, {
 ## Notes
 
 - ```getLengthSync()``` method DOESN'T calculate length for streams, use ```knownLength``` options as workaround.
+- ```getLength(cb)``` will send an error as first parameter of callback if stream length cannot be calculated (e.g. send in custom streams w/o using ```knownLength```).
+- ```submit``` will not add `content-length` if form length is unknown or not calculable.
 - Starting version `2.x` FormData has dropped support for `node@0.10.x`.
 - Starting version `3.x` FormData has dropped support for `node@4.x`.
 

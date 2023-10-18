@@ -6,12 +6,12 @@ Priority: optional
 Testsuite: autopkgtest-pkg-nodejs
 Build-Depends:
  debhelper-compat (= 13)
+ , dh-sequence-nodejs
  , node-asynckit <!nocheck>
  , node-combined-stream <!nocheck>
  , node-formidable <!nocheck>
  , node-mime-types <!nocheck>
- , pkg-js-tools (>= 0.8.7)
-Standards-Version: 4.5.1
+Standards-Version: 4.6.1
 Vcs-Browser: https://salsa.debian.org/js-team/node-form-data
 Vcs-Git: https://salsa.debian.org/js-team/node-form-data.git
 Homepage: https://github.com/felixge/node-form-data
@@ -21,7 +21,6 @@ Package: node-form-data
 Architecture: all
 Depends:
  ${misc:Depends}
- , nodejs
  , node-asynckit
  , node-combined-stream
  , node-mime-types
