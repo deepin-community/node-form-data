@@ -1,3 +1,24 @@
+node-form-data (4.0.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.6.1
+  * New upstream version 4.0.0
+
+ -- Yadd <yadd@debian.org>  Sun, 17 Jul 2022 10:20:30 +0200
+
+node-form-data (3.0.1-1) unstable; urgency=medium
+
+  * Team upload
+  * Update standards version to 4.6.0, no changes needed.
+  * Modernize debian/watch
+    * Fix filenamemangle
+    * Fix GitHub tags regex
+  * Use dh-sequence-nodejs instead of pkg-js-tools
+  * Drop dependency to nodejs
+  * New upstream version 3.0.1
+
+ -- Yadd <yadd@debian.org>  Tue, 28 Dec 2021 13:44:00 +0100
+
 node-form-data (3.0.0-4) unstable; urgency=medium
 
   [ Debian Janitor ]
