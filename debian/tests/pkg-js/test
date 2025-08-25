@@ -1,1 +1,24 @@
-NODE_PATH=debian/tests/test_modules node test/common.js
+for test in \
+ test/common.js \
+ test/static.js \
+ test/integration/test-custom-content-type.js \
+ test/integration/test-submit-multi.js \
+ test/integration/test-errors.js \
+ test/integration/test-custom-headers-object.js \
+ test/integration/test-submit-multi-nocallback.js \
+ test/integration/test-custom-headers-string.js \
+ test/integration/test-submit-https.js \
+ test/integration/test-set-boundary.js \
+ test/integration/test-ranged-filestream.js \
+ test/integration/test-return-http-request.js \
+ test/integration/test-submit-readable-stream.js \
+ test/integration/test-form-get-length-sync.js \
+ test/integration/test-submit-url-parsing.js \
+ test/integration/test-last_boundary-line_break.js \
+ test/integration/test-get-buffer.js \
+ test/integration/test-options-override.js \
+ test/integration/test-to-string.js \
+ test/integration/test-form-get-length.js
+do
+	node $test
+done
