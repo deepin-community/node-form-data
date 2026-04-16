@@ -1,0 +1,4 @@
+# Test data
+source-contains-prebuilt-javascript-object [test/integration/test-get-buffer.js]
+source-is-missing [test/integration/test-get-buffer.js]
+very-long-line-length-in-source-file * > 512 [test/integration/test-get-buffer.js:*]

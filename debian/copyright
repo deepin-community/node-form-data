@@ -11,11 +11,15 @@ License: Expat
 Files: debian/*
 Copyright: 2013, Jérémy Lal <kapouer@melix.org>
  2018, Pirate Praveen <praveen@debian.org>
- 2019, Yadd <yadd@debian.org>
+ 2019-2025, Yadd <yadd@debian.org>
 License: Expat
 
 Files: debian/tests/test_modules/fake/*
 Copyright: 2012, Felix Geisendörfer <felix@debuggable.com> and contributors
+License: Expat
+
+Files: es-set-tostringtag/*
+Copyright: 2022, ECMAScript Shims
 License: Expat
 
 License: Expat
